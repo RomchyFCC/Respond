@@ -1,3 +1,5 @@
+/* Removed padding/margin from body to span it across the whol canvas and added
+a font to be the same across the board */
 body {
 	font: 15px/1.5 Arial, Helvetica, sans-serif;
 	padding: 0;
@@ -5,16 +7,195 @@ body {
 	background-color: #eee;
 }
 
+/* Set up global classes and types */
 .container {
 	width: 80%;
 	margin: auto;
 	overflow: hidden;
 }
 
+.dark {
+	padding: 10px;
+	background: #55a;
+	color: #fff;
+	margin: 10px 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 16px;
+}
+
+.e_button {
+	height: 35px;
+	background: #e8491d;
+	border: 0;
+	padding: 0 20px;
+}
+
+/* Header styles */
 header {
-	background: darkblue;
+	background: #448;
 	color: #fff;
 	padding-top: 30px;
 	min-height: 70px;
 	border-bottom: #e8491d 3px solid;
+}
+
+/* made this into a global variable
+-----------------------------------
+header a {
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 16px;
+}
+-----------------------------------
+*/
+
+header li {
+	float: left;
+	display: inline;
+	padding: 0 20px;
+}
+
+header #logo {
+	float: left;
+}
+
+header #logo h1 {
+	margin: 0;
+}
+
+header nav {
+	float: right;
+	margin-top: 10px;
+}
+
+/* this selects the first letter of the logo and 
+selects only the current li item or tab in the web page */
+header .highlight, header .current a {
+	color: #e8491d;
+	font-weight: bold;
+}
+
+header a:hover {
+	color: orange;
+	font-weight: bold;
+}
+
+/*Main canvas*/
+#information {
+	min-height: 400px;
+	background: url("../img/image4.png") no-repeat;
+	background-size: cover;
+	text-align: center;
+	color: #fff;
+}
+
+#information h1 {
+	margin-top: 100px;
+	font-size: 55px;
+	margin-bottom: 10px;
+}
+
+#information p {
+	font-size: 20px;
+}
+
+/* the div with contact me in it */
+#contact {
+	padding: 15px;
+	color: #fff;
+	background: #448;
+	border-top: 3px solid #e8491d;
+}
+
+#contact h1 {
+	float: left;
+}
+
+#contact button {
+	float: right;
+	margin: 15px 0;
+}
+
+/* To be used in the case of another p
+ in the contact section that explains the usage of contact 
+------------------
+#contact p {
+	float: right;
+	font-size: 12px;
+}
+------------------ */
+
+/* images */
+#images {
+	margin-top: 20px;
+}
+
+#images .image {
+	float: left;
+	text-align: center;
+	width: 30%;
+	padding: 10px;
+}
+
+#images .image img{
+	width:90px;
+}
+
+/* for the about page main article and sidebar */
+aside#sidebar{
+	float: right;
+	width: 30%;
+	margin-top: 10px;
+}
+
+article#main-about {
+	float: left;
+	width: 65%;
+}
+
+/* copyright text style */
+footer {
+	padding: 20px;
+	margin-top: 20px;
+	color: #fff;
+	background-color: #e8491d;
+	text-align: center;
+}
+
+/*
+Media Queries
+Select floated elements and align them on the center
+*/
+@media(max-width: 768px){
+	header #logo,
+	header nav,
+	header nav li,
+	#contact h1,
+	#contact button,
+	#images .image,
+	article#main-about,
+	aside#sidebar{
+		float: none;
+		text-align: center;
+		width: 100%;
+	}
+
+	header {
+		padding-bottom: 20px;
+	}
+
+	#information h1{
+		margin-top: 40px;
+	}
 }
